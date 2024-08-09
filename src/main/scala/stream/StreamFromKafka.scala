@@ -1,3 +1,5 @@
+package stream
+
 import com.nimbusds.jose.util.StandardCharset
 import org.apache.commons.io.output.ByteArrayOutputStream
 import org.apache.flink.api.common.eventtime.{SerializableTimestampAssigner, WatermarkStrategy}
@@ -7,8 +9,8 @@ import org.apache.flink.connector.kafka.source.KafkaSource
 import org.apache.flink.connector.kafka.source.enumerator.initializer.OffsetsInitializer
 import org.apache.flink.connector.kafka.source.reader.deserializer.KafkaRecordDeserializationSchema
 import org.apache.flink.streaming.api.functions.sink.SinkFunction
-import org.apache.flink.streaming.api.scala.{StreamExecutionEnvironment, createTypeInformation}
 import org.apache.flink.streaming.api.scala.function.ProcessWindowFunction
+import org.apache.flink.streaming.api.scala.{StreamExecutionEnvironment, createTypeInformation}
 import org.apache.flink.streaming.api.windowing.assigners.SlidingEventTimeWindows
 import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow
@@ -20,8 +22,8 @@ import org.apache.kafka.clients.producer.ProducerConfig
 import producer.TranKafkaProducer.{ByStore, Transaction, jsonToTran}
 
 import java.io.ObjectOutputStream
-import java.util.Properties
 import java.time.Duration
+import java.util.Properties
 
 
 object StreamFromKafka {

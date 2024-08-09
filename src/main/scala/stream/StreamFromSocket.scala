@@ -1,4 +1,4 @@
-package test02
+package stream
 
 import org.apache.flink.api.common.eventtime.{SerializableTimestampAssigner, WatermarkStrategy}
 import org.apache.flink.api.scala.createTypeInformation
@@ -10,8 +10,6 @@ import org.apache.flink.streaming.api.windowing.assigners.{TumblingEventTimeWind
 import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow
 import org.apache.flink.util.Collector
-
-import java.lang
 
 object StreamFromSocket {
   def main(args: Array[String]): Unit = {
